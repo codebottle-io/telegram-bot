@@ -1,0 +1,6 @@
+{
+    "token": "TELEGRAM:BOT-TOKEN",
+    "options": {
+        "username": "BOT-USERNAME"
+    }
+}
