@@ -19,7 +19,7 @@ bot.command(`search`, async (ctx) => {
         text = text.slice(entities[0].length + 1);
 
         if (text) {
-            const { data } = await codebottle.search(text);
+            const data = await codebottle.search(text);
 
             ctx.reply(
                 formatText(data[0]),
@@ -35,7 +35,7 @@ bot.command(`search`, async (ctx) => {
 
 bot.command(`latest`, async (ctx) => {
     try {
-        const { data } = await codebottle.getLatest();
+        const data = await codebottle.getLatest();
         ctx.reply(
             formatText(data[0]),
             Object.assign({
@@ -44,7 +44,6 @@ bot.command(`latest`, async (ctx) => {
         );
     } catch (e) {
         ctx.reply(`There was an error.`);
-	console.log(e);
     }
 });
 
@@ -54,7 +53,7 @@ bot.command(`get`, async (ctx) => {
         text = text.slice(entities[0].length + 1);
 
         if (text) {
-            const { data } = await codebottle.get(text);
+            const data = await codebottle.get(text);
 
             ctx.reply(
                 formatText(data),
@@ -73,7 +72,7 @@ bot.on(`inline_query`, async (ctx) => {
     const { query } = ctx.update.inline_query;
 
     try {
-        const { data } = await (query ?
+        const data = await (query ?
             codebottle.search(query) :
             codebottle.getLatest());
 
@@ -107,7 +106,7 @@ bot.on(`inline_query`, async (ctx) => {
 bot.action(/^code_(.+)$/, async (ctx) => {
     try {
         const [, id] = ctx.match;
-        const { data } = await codebottle.get(id);
+        const data = await codebottle.get(id);
 
         await ctx.editMessageText(
             formatText(data, true),
@@ -125,7 +124,7 @@ bot.action(/^code_(.+)$/, async (ctx) => {
 bot.action(/^desc_(.+)$/, async (ctx) => {
     try {
         const [, id] = ctx.match;
-        const { data } = await codebottle.get(id);
+        const data = await codebottle.get(id);
 
         await ctx.editMessageText(
             formatText(data),
