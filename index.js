@@ -44,6 +44,7 @@ bot.command(`latest`, async (ctx) => {
         );
     } catch (e) {
         ctx.reply(`There was an error.`);
+	console.log(e);
     }
 });
 
