@@ -9,7 +9,7 @@
   "author": "YouTwitFace",
   "license": "ISC",
   "dependencies": {
-    "codebottle": "^0.5.0",
+    "codebottle": "^2.0.0",
     "telegraf": "^3.20.0"
   }
 }
