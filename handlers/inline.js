@@ -7,9 +7,9 @@ module.exports = bot =>
         const { query } = ctx.inlineQuery;
 
         try {
-            const data = await (query && query.length > 2 ?
-                codebottle.search({ query }) :
-                codebottle.latest);
+            const data = await (query && query.length > 2
+                ? codebottle.search({ query })
+                : codebottle.latest);
 
             data.forEach(snippet => {
                 results.push({

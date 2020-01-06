@@ -7,9 +7,10 @@ module.exports = bot =>
             const data = await codebottle.latest;
             ctx.reply(
                 formatText(data[0]),
-                Object.assign({
-                    parse_mode: `html`,
-                }, inlineButtons(data[0].id, true))
+                Object.assign(
+                    { parse_mode: `html` },
+                    inlineButtons(data[0].id, true),
+                ),
             );
         } catch (e) {
             ctx.reply(`There was an error.`);

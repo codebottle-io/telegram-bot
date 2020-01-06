@@ -12,9 +12,10 @@ module.exports = bot =>
 
                 ctx.reply(
                     formatText(data),
-                    Object.assign({
-                        parse_mode: `html`,
-                    }, inlineButtons(data.id, true))
+                    Object.assign(
+                        { parse_mode: `html` },
+                        inlineButtons(data.id, true),
+                    ),
                 );
             }
         } catch (e) {

@@ -8,7 +8,7 @@ const htmlEntities = {
 const escapeHtml = html => {
     return html.replace(
         new RegExp(`[${Object.keys(htmlEntities).join(``)}]`, `g`),
-        char => htmlEntities[char]
+        char => htmlEntities[char],
     );
 };
 

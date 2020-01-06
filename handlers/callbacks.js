@@ -9,9 +9,7 @@ module.exports = bot => {
 
             await ctx.editMessageText(
                 formatText(data, true),
-                Object.assign({
-                    parse_mode: `html`,
-                }, inlineButtons(id))
+                Object.assign({ parse_mode: `html` }, inlineButtons(id)),
             );
 
             ctx.answerCbQuery();
@@ -28,9 +26,7 @@ module.exports = bot => {
 
             await ctx.editMessageText(
                 formatText(data),
-                Object.assign({
-                    parse_mode: `html`,
-                }, inlineButtons(id, true))
+                Object.assign({ parse_mode: `html` }, inlineButtons(id, true)),
             );
 
             ctx.answerCbQuery();

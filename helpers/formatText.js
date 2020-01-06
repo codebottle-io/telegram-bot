@@ -10,11 +10,7 @@ const formatText = (data, code) => {
         message += `<pre>${escapeHtml(truncate(data.code))}</pre>`;
     } else {
         message += md2html(
-            escapeHtml(
-                truncate(
-                    data.description || `No description.`
-                )
-            )
+            escapeHtml(truncate(data.description || `No description.`)),
         );
     }
 
